@@ -11,9 +11,9 @@
 # please make sure you have the path/binaries below            #
 ################################################################
 BIN_WC='/usr/bin/env wc'
+CMD_WC='-l'
 BIN_GREP='/usr/bin/env grep'
 CMD_GREP='-c'
-CMD_WC='-l'
 BIN_ZYPPER='/usr/bin/env zypper'
 CMD_ZYPPER='-q lu'
 BIN_YUM='/usr/bin/env yum'

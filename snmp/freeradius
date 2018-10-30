@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+################################################################
+# copy this script to /etc/snmp/ and make it executable:       #
+# chmod +x /etc/snmp/freeradius                                #
+# ------------------------------------------------------------ #
+# edit your snmpd.conf and include:                            #
+# extend freeradius /etc/snmp/freeradius                       #
+# ------------------------------------------------------------ #
+# restart snmpd and activate the app for desired host          #
+# ------------------------------------------------------------ #
+# please make sure you have the path/binaries below            #
+################################################################
 
 # Set 0 for SNMP extend; set to 1 for Check_MK agent
 AGENT=0
@@ -12,8 +23,8 @@ RADIUS_KEY='adminsecret'
 RADIUS_STATUS_CMD='Message-Authenticator = 0x00, FreeRADIUS-Statistics-Type = 31, Response-Packet-Type = Access-Accept'
 
 # Pathes for grep and radclient executables, should work if within PATH
-BIN_GREP="$(command -v grep)"
-BIN_RADCLIENT="$(command -v radclient)"
+BIN_GREP='/usr/bin/env grep'
+BIN_RADCLIENT='/usr/bin/env radclient'
 
 if [ $AGENT == 1 ]; then
   echo "<<<freeradius>>>"
